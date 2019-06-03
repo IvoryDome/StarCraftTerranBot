@@ -1,0 +1,218 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00000000, pid=8972, tid=0x00003290
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_192-b12) (build 1.8.0_192-b12)
+# Java VM: Java HotSpot(TM) Client VM (25.192-b12 mixed mode windows-x86 )
+# Problematic frame:
+# C  0x00000000
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x02c2c800):  JavaThread "main" [_thread_in_native, id=12944, stack(0x02cc0000,0x02d10000)]
+
+siginfo: ExceptionCode=0xc0000005, ExceptionInformation=0x00000008 0x00000000
+
+Registers:
+EAX=0x1844a008, EBX=0x152791b8, ECX=0x011c5220, EDX=0x1527ccd8
+ESP=0x02d0dc8c, EBP=0x02d0dca8, ESI=0x152791b8, EDI=0x02c2c800
+EIP=0x00000000, EFLAGS=0x00010216
+
+Top of Stack: (sp=0x02d0dc8c)
+0x02d0dc8c:   6a503f07 02c2c800 152791b8 152791b8
+0x02d0dc9c:   ffff3c1b ffffffe5 00000000 02d0dcec
+0x02d0dcac:   02e1daf1 02c2c940 02d0dd04 011c5220
+0x02d0dcbc:   02c2c800 0000022e 01156ba0 02d0dcf0
+0x02d0dccc:   02d0dccc 00000000 02d0dd04 1527ccd8
+0x02d0dcdc:   00000000 152791b8 00000000 02d0dcfc
+0x02d0dcec:   02d0dd28 02e147c4 00000000 02e1a1e6
+0x02d0dcfc:   011c5220 02c2c800 0511b1f0 02d0dd08 
+
+Instructions: (pc=0x00000000)
+0xffffffe0:   
+
+
+Register to memory mapping:
+
+EAX=0x1844a008 is an unknown value
+EBX={method} {0x152791bc} 'self_native' '(J)Lbwapi/Player;' in 'bwapi/Game'
+ECX=0x011c5220 is an unknown value
+EDX=0x1527ccd8 is pointing into metadata
+ESP=0x02d0dc8c is pointing into the stack for thread: 0x02c2c800
+EBP=0x02d0dca8 is pointing into the stack for thread: 0x02c2c800
+ESI={method} {0x152791bc} 'self_native' '(J)Lbwapi/Player;' in 'bwapi/Game'
+EDI=0x02c2c800 is a thread
+
+
+Stack: [0x02cc0000,0x02d10000],  sp=0x02d0dc8c,  free space=311k
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  bwapi.Game.self_native(J)Lbwapi/Player;+0
+j  bwapi.Game.self()Lbwapi/Player;+5
+j  TestBot1.onStart()V+16
+j  bwapi.AIModule.onStart()V+11
+v  ~StubRoutines::call_stub
+j  bwapi.Mirror.startGame()V+0
+j  TestBot1.run()V+15
+j  TestBot1.main([Ljava/lang/String;)V+7
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x154dd000 JavaThread "Service Thread" daemon [_thread_blocked, id=748, stack(0x15a80000,0x15ad0000)]
+  0x154d4000 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=16288, stack(0x159f0000,0x15a40000)]
+  0x154d3000 JavaThread "Attach Listener" daemon [_thread_blocked, id=11728, stack(0x15960000,0x159b0000)]
+  0x154de000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=12004, stack(0x158d0000,0x15920000)]
+  0x154cb400 JavaThread "Finalizer" daemon [_thread_blocked, id=17104, stack(0x15740000,0x15790000)]
+  0x154b5400 JavaThread "Reference Handler" daemon [_thread_blocked, id=18264, stack(0x156b0000,0x15700000)]
+=>0x02c2c800 JavaThread "main" [_thread_in_native, id=12944, stack(0x02cc0000,0x02d10000)]
+
+Other Threads:
+  0x02e0d000 VMThread [stack: 0x15460000,0x154b0000] [id=4744]
+  0x15503800 WatcherThread [stack: 0x15b10000,0x15b60000] [id=5312]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 4928K, used 4099K [0x05000000, 0x05550000, 0x0a550000)
+  eden space 4416K,  92% used [0x05000000, 0x05400e98, 0x05450000)
+  from space 512K,   0% used [0x05450000, 0x05450000, 0x054d0000)
+  to   space 512K,   0% used [0x054d0000, 0x054d0000, 0x05550000)
+ tenured generation   total 10944K, used 0K [0x0a550000, 0x0b000000, 0x15000000)
+   the space 10944K,   0% used [0x0a550000, 0x0a550000, 0x0a550200, 0x0b000000)
+ Metaspace       used 2094K, capacity 2632K, committed 2752K, reserved 4480K
+
+Card table byte_map: [0x04e90000,0x04f20000] byte_map_base: 0x04e68000
+
+Polling page: 0x01140000
+
+CodeCache: size=32768Kb used=755Kb max_used=755Kb free=32012Kb
+ bounds [0x02e10000, 0x02ed0000, 0x04e10000]
+ total_blobs=235 nmethods=90 adapters=76
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 50.227 Thread 0x154d4000   80             bwapi.Unit::getDistance (10 bytes)
+Event: 50.227 Thread 0x154d4000 nmethod 80 0x02ec9988 code [0x02ec9a80, 0x02ec9b1c]
+Event: 51.289 Thread 0x154d4000   82             TestBot1::onFrame (275 bytes)
+Event: 51.291 Thread 0x154d4000 nmethod 82 0x02ec9b88 code [0x02ec9ed0, 0x02eca8d0]
+Event: 68.020 Thread 0x154d4000   85             java.lang.AbstractStringBuilder::newCapacity (39 bytes)
+Event: 68.020 Thread 0x154d4000 nmethod 85 0x02ecbe48 code [0x02ecbf50, 0x02ecc08c]
+Event: 68.962 Thread 0x154d4000   87             bwapi.TilePosition::<init> (15 bytes)
+Event: 68.962 Thread 0x154d4000 nmethod 87 0x02ecc648 code [0x02ecc740, 0x02ecc7c0]
+Event: 68.962 Thread 0x154d4000   88             bwapi.TilePosition::toString (40 bytes)
+Event: 68.962 Thread 0x154d4000 nmethod 88 0x02ecc808 code [0x02ecc950, 0x02eccb98]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (2 events):
+Event: 0.078 Thread 0x02c2c800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x05006ea8) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u192\11897\hotspot\src\shar
+Event: 0.078 Thread 0x02c2c800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x05007178) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u192\11897\hotspot\src\share\vm\prims\jni.cpp
+
+Events (10 events):
+Event: 47.835 loading class java/util/ArrayList$Itr
+Event: 47.835 loading class java/util/ArrayList$Itr done
+Event: 47.836 loading class bwta/Region
+Event: 47.836 loading class bwta/Region done
+Event: 47.836 loading class bwapi/CenteredObject
+Event: 47.836 loading class bwapi/CenteredObject done
+Event: 47.837 loading class bwta/Polygon
+Event: 47.837 loading class bwta/Polygon done
+Event: 47.862 loading class bwapi/TilePosition
+Event: 47.862 loading class bwapi/TilePosition done
+
+
+Dynamic libraries:
+0x00d20000 - 0x00d53000 	C:\Program Files (x86)\Java\jre1.8.0_192\bin\javaw.exe
+0x77380000 - 0x7751c000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x75750000 - 0x75830000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x75100000 - 0x752f9000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x760c0000 - 0x7613e000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x76940000 - 0x76a00000 	C:\WINDOWS\System32\msvcrt.dll
+0x74e80000 - 0x74ef9000 	C:\WINDOWS\System32\sechost.dll
+0x754a0000 - 0x7555f000 	C:\WINDOWS\System32\RPCRT4.dll
+0x749f0000 - 0x74a10000 	C:\WINDOWS\System32\SspiCli.dll
+0x749e0000 - 0x749ea000 	C:\WINDOWS\System32\CRYPTBASE.dll
+0x75830000 - 0x75892000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x76790000 - 0x76929000 	C:\WINDOWS\System32\USER32.dll
+0x75570000 - 0x75587000 	C:\WINDOWS\System32\win32u.dll
+0x75590000 - 0x755b3000 	C:\WINDOWS\System32\GDI32.dll
+0x76a00000 - 0x76b66000 	C:\WINDOWS\System32\gdi32full.dll
+0x76b70000 - 0x76bf0000 	C:\WINDOWS\System32\msvcp_win.dll
+0x770d0000 - 0x771f3000 	C:\WINDOWS\System32\ucrtbase.dll
+0x74010000 - 0x7421f000 	C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17763.134_none_4d606e111b9d4362\COMCTL32.dll
+0x74b30000 - 0x74da8000 	C:\WINDOWS\System32\combase.dll
+0x76740000 - 0x76765000 	C:\WINDOWS\System32\IMM32.DLL
+0x6eb00000 - 0x6ebbf000 	C:\Program Files (x86)\Java\jre1.8.0_192\bin\msvcr100.dll
+0x6e470000 - 0x6e845000 	C:\Program Files (x86)\Java\jre1.8.0_192\bin\client\jvm.dll
+0x74b20000 - 0x74b26000 	C:\WINDOWS\System32\PSAPI.DLL
+0x722a0000 - 0x722c4000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x74260000 - 0x74268000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x74220000 - 0x74228000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x74ac0000 - 0x74b1f000 	C:\WINDOWS\System32\WS2_32.dll
+0x71ff0000 - 0x72013000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x74e40000 - 0x74e7b000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x742b0000 - 0x742bc000 	C:\Program Files (x86)\Java\jre1.8.0_192\bin\verify.dll
+0x737a0000 - 0x737c2000 	C:\Program Files (x86)\Java\jre1.8.0_192\bin\java.dll
+0x73780000 - 0x73794000 	C:\Program Files (x86)\Java\jre1.8.0_192\bin\zip.dll
+0x75b70000 - 0x760bd000 	C:\WINDOWS\System32\SHELL32.dll
+0x77040000 - 0x770c9000 	C:\WINDOWS\System32\shcore.dll
+0x76140000 - 0x7673a000 	C:\WINDOWS\System32\windows.storage.dll
+0x74a10000 - 0x74a2c000 	C:\WINDOWS\System32\profapi.dll
+0x74f00000 - 0x74f54000 	C:\WINDOWS\System32\powrprof.dll
+0x74fb0000 - 0x74ff4000 	C:\WINDOWS\System32\shlwapi.dll
+0x75600000 - 0x7560f000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x755c0000 - 0x755d2000 	C:\WINDOWS\System32\cryptsp.dll
+0x6a4e0000 - 0x6a766000 	C:\Users\ryanm\Desktop\ExampleBot2_5\ExampleBot\bwapi_bridge2_5.dll
+0x6f540000 - 0x6f59e000 	C:\Users\ryanm\Desktop\ExampleBot2_5\ExampleBot\libmpfr-4.dll
+0x6a460000 - 0x6a4d1000 	C:\WINDOWS\SYSTEM32\MSVCP120.dll
+0x6acc0000 - 0x6ad27000 	C:\Users\ryanm\Desktop\ExampleBot2_5\ExampleBot\libgmp-10.dll
+0x6a370000 - 0x6a45e000 	C:\WINDOWS\SYSTEM32\MSVCR120.dll
+0x73980000 - 0x73b0f000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 
+java_command: TestBot1
+java_class_path (initial): C:\Users\ryanm\Desktop\ExampleBot2_5\ExampleBot\bin;C:\Users\ryanm\Desktop\ExampleBot2_5\ExampleBot\lib\bwmirror_v2_5.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:/Program Files (x86)/Java/jre1.8.0_192/bin/client;C:/Program Files (x86)/Java/jre1.8.0_192/bin;C:/Program Files (x86)/Java/jre1.8.0_192/lib/i386;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Users\ryanm\AppData\Local\Microsoft\WindowsApps;C:\Users\ryanm\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ryanm\AppData\Local\Programs\Python\Python37-32\Scripts;C:\Users\ryanm\AppData\Roaming\npm;;C:\Users\ryanm\Desktop;
+USERNAME=ryanm
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 17763 (10.0.17763.1)
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, erms, ht, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 8203136k(3226436k free), swap 16067456k(8362844k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.192-b12) for windows-x86 JRE (1.8.0_192-b12), built on Oct  6 2018 16:11:13 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Sun Dec 16 13:57:30 2018
+timezone: GMT Standard Time
+elapsed time: 138 seconds (0d 0h 2m 18s)
+
